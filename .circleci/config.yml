@@ -22,6 +22,8 @@ jobs:
           sudo apt install python-dev python-pip
           sudo pip install awscli
 
+      - run: echo $(whoami)
+      - run: echo $(npm config get prefix)
       - run: sudo chown -R $(whoami) $(npm config get prefix)/{lib/node_modules,bin,share}
       - run: npm config set unsafe-perm true 
       - run: npm install
